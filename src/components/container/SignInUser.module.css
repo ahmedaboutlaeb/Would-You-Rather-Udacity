@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+
+}
+
+.avatar{
+
+
+}
+.authUserName{
+    font-size: larger;
+    color:green;
+    margin-right:10px;
+    
+
+}
+.button{
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    justify-content: center;
+    background-color: #9b9a9e;
+    border-radius: 20px;
+    padding:  5px;
+    min-width: 100px;
+    margin-right: 1rem;
+    cursor: pointer;
+    color:white;
+}
+.button:hover{
+    border: 1px solid green;
+}
+.imgContainer{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+.imgContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
