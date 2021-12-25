@@ -6,7 +6,7 @@ import { setQuestions } from "./store/questionsSlice";
 import { setUsers } from "./store/usersSlice";
 import MainNav from "./components/container/MainNav";
 import QuestionInfo from './components/Q/QuestionInfo'
-import LeaderBoard from "./views/LeaderBoard";
+import LeaderBoard from "./components/U/LeaderBoard";
 import{Routes,Route} from 'react-router-dom';
 import SignInForm from './components/container/SignInForm'
 import Home from "./views/Home";

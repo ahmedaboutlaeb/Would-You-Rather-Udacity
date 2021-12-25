@@ -41,3 +41,6 @@
 .card{
   width :30%
 }
+.active{
+  background-color: red;
+}

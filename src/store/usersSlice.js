@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const intialValue = {
-  authUser:null,
+  authUser:'sarahedo',
   users: {
     sarahedo: {
       id: "sarahedo",
       name: "Sarah Edo",
-      avatarURL: "../../public/avatars/sarah.jpg",
+      avatarURL: "",
       answers: {
         "8xf0y6ziyjabvozdd253nd": "optionOne",
         "6ni6ok3ym7mf1p33lnez": "optionTwo",
@@ -18,7 +19,7 @@ const intialValue = {
     tylermcginnis: {
       id: "tylermcginnis",
       name: "Tyler McGinnis",
-      avatarURL: "/assets/avatar2.png",
+      avatarURL:"",
       answers: {
         vthrdm985a262al8qx3do: "optionOne",
         xj352vofupe1dqz9emx13r: "optionTwo",
@@ -28,7 +29,7 @@ const intialValue = {
     johndoe: {
       id: "johndoe",
       name: "John Doe",
-      avatarURL: "/assets/avatar3.png",
+      avatarURL: "",
       answers: {
         xj352vofupe1dqz9emx13r: "optionOne",
         vthrdm985a262al8qx3do: "optionTwo",

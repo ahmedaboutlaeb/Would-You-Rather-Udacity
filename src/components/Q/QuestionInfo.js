@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import classes from "./QuestionInfo.module.css";
+
 import AnsweredQuestion from "./AnsweredQuestion";
 import UnAnsweredQuestion from "./UnAnsweredQuestion";
 //this component will render one question component (answeredquestion or usAnsweredQuestion)
@@ -25,7 +25,7 @@ function QuestionInfo() {
   const isAnswered = Object.keys(authUser.answers).includes(questionId);
 
   return (
-    <div className={classes.container}>
+    <div >
       {!isAnswered && question && (
         <UnAnsweredQuestion question={question} authUser={authUser} author={users.users[question.author]}/>
       )}

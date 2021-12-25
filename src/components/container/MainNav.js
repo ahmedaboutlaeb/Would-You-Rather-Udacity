@@ -32,12 +32,12 @@ function MainNav() {
           <nav className={classes.nav}>
             <ul>
               <li>
-                <NavLink  to="/home" >
+                <NavLink  to="/home"    >
                   <span>Home</span>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/new-question">
+                <NavLink to="/new-question" >
                   <span>New Question</span>
                 </NavLink>
               </li>

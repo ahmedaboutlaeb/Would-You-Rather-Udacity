@@ -1,20 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "./Question.module.css";
+
 
 const Question = ({ question, author }) => {
   return (
-    <div className={classes.question}>
-      <header><span className={classes.authorName}>{author.name}</span> Askes..</header>
-      <div className={classes.questionContent}>
-        <div className={classes["img-holder"]}>
-          <img src={author.avatarURL} alt="" className={classes.img} />
+    <div class="card mb-3" style={{maxWidth: '540px'}}>
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src={author.avatarURL}
+            alt=""
+            class="img-fluid rounded-start"
+            
+          />
         </div>
-        <div>
-          <h6>Would You Rather..</h6>
-          <p>A. {question.optionOne.text}</p>
-          <p>b. .....</p>
-        <Link to={`/home/${question.id}`}>View Poll</Link>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{author.name} Aseks..</h5>
+
+            <h6>Would You Rather..</h6>
+            <h1>A. {question.optionOne.text}</h1>
+            <h1>b. ____________</h1>
+            <Link to={`/home/${question.id}`}>View Poll</Link>
+          </div>
         </div>
       </div>
     </div>

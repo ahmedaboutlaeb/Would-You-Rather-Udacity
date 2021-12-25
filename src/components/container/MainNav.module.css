@@ -36,7 +36,7 @@
 }
 .nav ul li a {
   padding: 10px 16px;
-  background-color: #121213;
+  background-color: #95959e;
   border-radius: 10px;
   color: #e3e9e6;
   font-weight: 600;
@@ -44,6 +44,6 @@
   justify-content: center;
   align-items: center;
 }
-.nav ul li a span{
-  text-decoration: none;
+.selected{
+  background-color: blue !important;
 }

@@ -16,6 +16,7 @@ function AnsweredQuestion({ question, author, authUser }) {
       
       // we need to know the user vote for which answer
       const checkAnswer = authUser.answers[question.id]; // it will return optionOne or option Two
+      //i will give it a background color green 
 
       console.log(checkAnswer)
       const optionOneActive =

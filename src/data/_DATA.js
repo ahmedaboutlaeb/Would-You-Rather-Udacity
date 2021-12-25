@@ -1,8 +1,9 @@
+
 let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: "https://cdn.pixabay.com/photo/2021/03/03/08/56/woman-6064819__340.jpg",
+    avatarURL: "https://cdn.pixabay.com/photo/2021/01/17/09/11/woman-5924366__340.jpg",
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +15,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: "https://cdn.pixabay.com/photo/2018/04/28/13/18/man-3357275__340.png",
+    avatarURL: "https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819__340.png",
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +25,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: "https://cdn.pixabay.com/photo/2018/05/19/22/03/man-3414477__340.png",
+    avatarURL: "https://cdn.pixabay.com/photo/2021/09/07/16/38/man-6604399__340.png",
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
