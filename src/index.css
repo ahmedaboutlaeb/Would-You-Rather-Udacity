@@ -60,3 +60,7 @@ button {
   justify-content: center;
   align-items: center;
 }
+.nav ul li a.active {
+  color: #fff;
+  background: #7600dc;
+}

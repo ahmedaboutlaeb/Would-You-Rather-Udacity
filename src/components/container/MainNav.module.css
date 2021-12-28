@@ -30,11 +30,12 @@
   justify-content: center;
   align-items: center;
 }
-.nav ul li a:hover{
-  background-color: turquoise;
-  border-radius: 25%;
-}
+
 
 .active{
   background-color: turquoise;
+  border-radius: 10px;
+}
+.inActive{
+  background-color: white;
 }

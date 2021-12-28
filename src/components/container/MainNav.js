@@ -3,52 +3,58 @@ import classes from "./MainNav.module.css";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthUser } from "../../store/usersSlice";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import SignInUser from "./SignInUser";
 
 function MainNav() {
-  const dispacth = useDispatch()
-  
+  const dispacth = useDispatch();
+
   const navigator = useNavigate();
-// select the users 
-  const users = useSelector((state) => state.users)
-//find the authUser data (id name avatarURL answers questions)
+  // select the users
+  const users = useSelector((state) => state.users);
+  //find the authUser data (id name avatarURL answers questions)
   const authUser = Object.values(users.users).find(
     (user) => user.id === users.authUser
   );
- 
-  const onLogOutHandler = ()=>{
+
+  const onLogOutHandler = () => {
     dispacth(setAuthUser(null));
     // on signout back to the home page
     navigator("/");
-  }
+  };
   return (
     <div className={classes.container}>
-    
-        
-         
-          <nav className={classes.nav}>
-            <ul>
-              <li>
-                <NavLink  to="/home" className={(e)=>e.isActive?`{classes.active}`:null} >
-                  <span>Home</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/new-question"className={(e)=>e.isActive?`{classes.active}`:null} >
-                  <span>New Question</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/leaderboard" className={(e)=>e.isActive?`{classes.active}`:null} >
-                  <span>Leader Board</span>
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-          {users.authUser && <SignInUser authUser = {authUser} onLogOutHandler = {onLogOutHandler}/>}
-        
-      
+      <nav className={classes.nav}>
+        <ul>
+          <li>
+            <NavLink
+              to="/home"
+              className={({ isActive }) => (isActive ? `${classes.active}` : `${classes.inActive}`)}
+            >
+              <span>Home</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/new-question"
+              className={({ isActive }) => (isActive ? `${classes.active}` : `${classes.inActive}`)}
+            >
+              <span>New Question</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/leaderboard"
+              className={({ isActive }) => (isActive ? `${classes.active}` : `${classes.inActive}`)}
+            >
+              <span>Leader Board</span>
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+      {users.authUser && (
+        <SignInUser authUser={authUser} onLogOutHandler={onLogOutHandler} />
+      )}
     </div>
   );
 }
