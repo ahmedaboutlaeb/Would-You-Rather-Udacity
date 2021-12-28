@@ -29,8 +29,8 @@ function Home() {
 
 
   return (
-    <div>
-      <section>
+    <div className="main">
+      <section className="sectionHome">
         <HomeNavigator displayList={setDefaultList} />
 
         {/* we will render one question list based on the defaultList status 

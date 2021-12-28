@@ -4,10 +4,7 @@ import classes from "./SignInUser.module.css";
 function SignInUser({ authUser, onLogOutHandler }) {
   return (
     <div className={classes.container}>
-      <div className={classes.authUserName}>{authUser.name.split(" ")[0]}</div>
-      <button className={classes.button} onClick={onLogOutHandler}>
-        Logout
-      </button>
+      <p className={classes.authUserName}> Hello,{authUser.name.split(" ")[0]}</p>
       <div className={classes.imgContainer}>
         <img
           src={authUser.avatarURL}
@@ -15,6 +12,9 @@ function SignInUser({ authUser, onLogOutHandler }) {
           className={classes.avatar}
         />
       </div>
+      <button className={classes.button} onClick={onLogOutHandler}>
+        Logout
+      </button>
     </div>
   );
 }

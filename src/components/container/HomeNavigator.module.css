@@ -1,23 +1,13 @@
 .nav{
+    border-bottom: 1px solid grey;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    gap:53px;
+    margin-bottom: 20px;
+    padding: 0 5px 0 5px;
+}
 
-}
-.nav ul {
-    display: flex;
-}
-.nav ul li {
-    padding: 10px;
+.nav button:hover{
    
-   
-    
-}
-.nav ul li button{
-    color :white;
-    background-color:green;
-    border-radius:5px;
-    height: 30px;padding: 5px;
-    font-size: 20px;
-    text-align: center;
-    
+   color:turquoise
 }

@@ -32,41 +32,47 @@ const UnAnsweredQuestion = ({ question, author, authUser }) => {
     }
   };
   return (
-    <div className={classes.card}>
-      <h5 className={classes.cardHeader}>{author.name} Asks...</h5>
-      <br/>
-      <div className={classes.cardBody}>
-        <div className={classes.imgContainer}>
-          <img src={author.avatarURL} alt="" />
-        </div>
-        <div>
-          <h3>Would You Rather</h3>
-          <form onSubmit={onSubmitHandler}>
-            <div>
-              <input
-                value="optionOne"
-                id="option-one"
-                name="option"
-                type="radio"
-                ref={optionOneRef}
-              />
-              <label htmlFor="option-one">{question.optionOne.text}</label>
-            </div>
-            <div>
-              <input
-                value="optionTwo"
-                id="option-two"
-                name="option"
-                type="radio"
-                ref={optionTwoRef}
-              />
-              <label htmlFor="option-two">{question.optionTwo.text}</label>
-            </div>
-            <button className="btn btn-primary">Submit</button>
-          </form>
+    
+
+      <div className={classes.container}>
+        <p className={classes.title}>
+          <span>{author.name}</span> Askes..
+        </p>
+        <div className={classes.devide}>
+          <div className={classes.first}>
+            <img src={author.avatarURL} alt="" />
+          </div>
+
+          <div className={classes.second}>
+            <h1>Would You Rather..</h1>
+
+            <form onSubmit={onSubmitHandler}>
+              <div>
+                <input
+                  value="optionOne"
+                  id="option-one"
+                  name="option"
+                  type="radio"
+                  ref={optionOneRef}
+                />
+                <label htmlFor="option-one">{question.optionOne.text}</label>
+              </div>
+              <div>
+                <input
+                  value="optionTwo"
+                  id="option-two"
+                  name="option"
+                  type="radio"
+                  ref={optionTwoRef}
+                />
+                <label htmlFor="option-two">{question.optionTwo.text}</label>
+              </div>
+              <button>Submit</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 

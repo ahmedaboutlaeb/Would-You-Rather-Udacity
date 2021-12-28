@@ -3,66 +3,73 @@ import classes from "./AnsweredQuestion.module.css";
 //at this component there is no actoin to dispatch we will just show some data from the passed props
 
 function AnsweredQuestion({ question, author, authUser }) {
-  
   const optionOneLength = question.optionOne.votes.filter(
     (item) => item !== ""
-    ).length;
-    
-    const optionTwoLength = question.optionTwo.votes.filter(
-      (item) => item !== ""
-      ).length;
-      
-      const allVotes = optionOneLength + optionTwoLength;
-      
-      // we need to know the user vote for which answer
-      const checkAnswer = authUser.answers[question.id]; // it will return optionOne or option Two
-      //i will give it a background color green 
+  ).length;
 
-      console.log(checkAnswer)
-      const optionOneActive =
-      checkAnswer === "optionOne"
-        ? `${classes.optionOne} ${classes.active}`: null;
-    const optionTwoActive = checkAnswer === "optionTwo"? `${classes.optionTwo} ${classes.active}`
-        : null;
-     
+  const optionTwoLength = question.optionTwo.votes.filter(
+    (item) => item !== ""
+  ).length;
+
+  const allVotes = optionOneLength + optionTwoLength;
+
+  // we need to know the user vote for which answer
+  const checkAnswer = authUser.answers[question.id];
+   // it will return optionOne or option Two
+ 
+
+  console.log(checkAnswer);
+  const optionOneActive =
+    checkAnswer === "optionOne"
+      ? `${classes.active} `
+      : `${classes.notActive}`;
+  const optionTwoActive =
+    checkAnswer === "optionTwo"
+      ? `${classes.active} `
+      : `${classes.notActive}`;
 
   return (
     <div className={classes.container}>
-      <header>
-        <span>{author.name}</span> asking...
-      </header>
-
-      <div className={classes.imgContainer}>
-        <img src={author.avatarURL}  alt={author.name+'photo'}/>
-      </div>
-
-        <h4 style={{ fontWeight: "bold" }}>Results:</h4>
-      <div className={classes.questionContainer}>
-
-        <div className={optionOneActive}>
-          <p>{question.optionOne.text}</p>
-
-          <div className={classes.progress}>
-            <p>{Math.floor((optionOneLength / allVotes) * 100)}%</p>
-            <div style={{ width: `${(optionOneLength / allVotes) * 100}%` }}></div>
-          </div>
-
-          <span>
-            {optionOneLength} out of {allVotes} votes
-          </span>
+      <p className={classes.title}>
+        <span>{author.name}</span> Askes..
+      </p>
+      <div className={classes.devide}>
+        <div className={classes.first}>
+          <img src={author.avatarURL} alt="" />
         </div>
 
-        <div  className={optionTwoActive}>
-          <p>{question.optionTwo.text}</p>
+        <div className={classes.second}>
+          <h4>Results:</h4>
 
-          <div className={classes.progress}>
-            <p>{Math.floor((optionTwoLength / allVotes) * 100)}%</p>
-            <div style={{ width: `${(optionTwoLength / allVotes) * 100}%` , backGroundColor:'red'}}></div>
+          <div className={optionOneActive}>
+            <p>{question.optionOne.text}</p>
+            <p>{Math.floor((optionOneLength / allVotes) * 100)}%</p>
+            <progress
+              id="file"
+              max="100"
+              value={(optionOneLength / allVotes) * 100}
+            >
+              {Math.floor((optionOneLength / allVotes) * 100)}%{" "}
+            </progress>
+
+            <p>
+              {optionOneLength} out of {allVotes} votes
+            </p>
           </div>
 
-          <span>
-            {optionTwoLength} out of {allVotes} votes
-          </span>
+          <div className={optionTwoActive}>
+            <p>{question.optionTwo.text}</p>
+            <p>{Math.floor((optionTwoLength / allVotes) * 100)}%</p>
+            <progress 
+            max="100" 
+            value={(optionTwoLength / allVotes) * 100}
+            >
+              {Math.floor((optionTwoLength / allVotes) * 100)}%
+            </progress>
+            <p>{optionTwoLength} out of {allVotes} votes</p>
+          </div>
+
+
         </div>
       </div>
     </div>

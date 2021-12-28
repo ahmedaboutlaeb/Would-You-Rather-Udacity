@@ -1,31 +1,56 @@
-.card {
-  position: relative;
+.container{
+  height:10%;
+  border: 1px solid grey;
+  margin: 10px;
+  width: 100%;
+
+}
+.title {
+  border-bottom: 1px solid rgb(94, 92, 92);
+  background-color: rgb(214, 209, 209);
+ text-align: center;
+  font-weight: bold;
+  color: rgb(2, 26, 23);
+  
+}
+
+.devide{
   display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: 0.25rem;
+  gap : 10px;
+  justify-content: space-around;
+  align-items: center;
 }
-.card-header {
-  padding: 0.5rem 1rem;
-  margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+.first {
+  width: 20%;
+  height: 20%;
+
+  align-self: flex-start;
 }
-.card-body {
-  flex: 1 1 auto;
-  padding: 1rem 1rem;
-}
-.imgContainer {
-  width: 15%;
-  border-radius: 50%;
-}
-.imgContainer img {
+.first img {
   object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 50%;
+ 
+}
+.second{
+    display: flex;
+    flex-direction: column;
+}
+.second h1{
+    font-size: 18px;
+
+}
+.second button{
+  
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 2px;
+    
+    width: 100%;
+    background-color: rgb(5, 80, 5);
+    color:white;
+    font-weight: bold;
+  
+
 }

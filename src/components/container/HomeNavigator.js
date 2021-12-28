@@ -2,26 +2,22 @@ import React from "react";
 import classes from "./HomeNavigator.module.css";
 
 function HomeNavigator(props) {
-    const showUnAnsQuestionsHandler = ()=>{
-        props.displayList(true)
-    }
-    const showAnsQuestionsHandler = ()=>{
-        props.displayList(false)
-    }
+  const showUnAnsQuestionsHandler = () => {
+    props.displayList(true);
+  };
+  const showAnsQuestionsHandler = () => {
+    props.displayList(false);
+  };
   return (
-    
     <nav className={classes.nav}>
-        <ul>
-          <li>
-          <button onClick={showUnAnsQuestionsHandler} type="button" className="btn btn-success">Unanswered Questions</button>
-            
-          </li>
-          <li>
-            <button onClick={showAnsQuestionsHandler} type="button" className="btn btn-success">Answered Questions</button>
-          </li>
-        </ul>
-      </nav>
-   
+      <button onClick={showUnAnsQuestionsHandler} type="button">
+        Unanswered Questions
+      </button>
+
+      <button onClick={showAnsQuestionsHandler} type="button">
+        Answered Questions
+      </button>
+    </nav>
   );
 }
 

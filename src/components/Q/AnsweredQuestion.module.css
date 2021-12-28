@@ -1,94 +1,67 @@
-.container {
-  display: flex;
-  background-color: thistle;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  width: 60%;
+.container{
+  height:10%;
+  border: 1px solid grey;
+  margin: 10px;
+
 }
-.questionContainer {
+.title {
+  border-bottom: 1px solid rgb(94, 92, 92);
+  background-color: rgb(214, 209, 209);
  
+  font-weight: bold;
+  color: rgb(2, 26, 23);
+  
+}
+
+.devide{
   display: flex;
-  flex-direction: column;
+  gap : 10px;
   justify-content: space-around;
   align-items: center;
 }
-.container header span {
-  font-weight: bold;
-}
+.first {
+  width: 20%;
+  height: 20%;
 
-.imgContainer {
-  width: 15%;
-  border-radius: 50%;
+  align-self: center;
 }
-.imgContainer img {
+.first img {
   object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 50%;
+ 
+}
+.second{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.second h1{
+    font-size: 18px;
+
+}
+.second a{
+    border: 1px solid turquoise;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 2px;
+    border-radius: 20px;
 }
 
-.optionOne {
-  width: 100%;
-  height: 120px;
-  background-color: rgba(162, 216, 255, 0.9098039215686274);
-  border-radius: 10px;
-  padding: 15px;
-}
-.optionOne p {
-  font-weight: 600;
-  margin: 0;
-  font-size: 1rem;
-  text-transform: capitalize;
+.active{
+  border :5px solid green;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+
 }
 
-.optionTwo {
-  width: 100%;
-  height: 120px;
-  background-color: rgba(62, 184, 98, 0.91);
-  border-radius: 10px;
-  padding: 15px;
-}
-.optionTwo p {
-  font-weight: 600;
-  margin: 0;
-  font-size: 1rem;
-  text-transform: capitalize;
+.notActive{
+  border:1px solid grey;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  
 }
 
-.progress {
-  width: 100%;
-  height: 32px;
-  background-color: #fff;
-  margin-top: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-.progress div {
-  height: 100%;
-  background-color: rgb(248, 205, 12);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-weight: 600;
-  transition: 0.5s ease-in-out;
-  position: absolute;
-  top: 0;
-}
-.progress p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  color: #05667e;
-
-  z-index: 3;
-}
-
-.active {
-  background-color: #13e748 !important;
-  position: relative;
-}

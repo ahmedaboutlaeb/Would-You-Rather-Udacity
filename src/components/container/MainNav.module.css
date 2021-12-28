@@ -1,49 +1,40 @@
 .container{
-  margin-bottom: 30px;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.appName{
-  background-color: #18c19e;
-  color: rgb(255, 255, 255);
-  border-radius: 10px;
-  padding: 5px 20px;
-  height: 100%;
-  margin-left:20px;
   display: flex;
   align-items: center;
-  user-select: none;
-  cursor: pointer;
-  width: 30%;
+  gap: 100px;
+  border-bottom: 2px solid turquoise;
+  margin-bottom: 10px;
 }
+
+
 .nav{
   background-color: #ffffff;
-  border-radius: 10px;
-  flex: 1;
-  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .nav ul  {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 5px;
 }
+
 .nav ul li a {
   padding: 10px 16px;
-  background-color: #95959e;
-  border-radius: 10px;
-  color: #e3e9e6;
-  font-weight: 600;
+
+ 
+  text-decoration: none;
+  color:black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.selected{
-  background-color: blue !important;
+.nav ul li a:hover{
+  background-color: turquoise;
+  border-radius: 25%;
+}
+
+.active{
+  background-color: turquoise;
 }

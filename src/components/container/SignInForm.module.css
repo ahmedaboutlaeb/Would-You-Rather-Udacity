@@ -1,51 +1,52 @@
-.container{
-    display: flex;
-    align-items: center;
 
+.formContainer{
+    width: 35%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
 }
-.formContainer {
-  width: 50%;
-  height: 60vh;
-  background-color:whitesmoke;
-  border-radius: 10px;
-  border:2px solid grey;
-  box-shadow: 11px 24px 17px 9px #d7d6d6;
-  padding: 20px;
-  
-  
- 
+.formContainer img {
+    margin: 5%;
+    width: 50%;
+    height: 30%;
+    object-fit: fill;
 }
 .formContainer header {
     width: 100%;
     text-align: center;
+    
+    border-bottom: 1px solid grey;
+    
 }
 .formContainer header h1{
-    text-align: center;
+    font-size: 18px;
 }
-.title h1 {
-    width: 100%;
-    text-align: center;
-    font-size: 1.2em;
-    color:blue
-  }
-.would{
-    color :black
-}
-.rather{
-    color:red;
-}
+
+
+
 .signinButton{
     width: 100%;
     height: 30px;
-    background-color: green;
+    background-color: turquoise;
     cursor: pointer;
     font-size: 20px;
     color: white;
     margin-top: 20px ;
     border-radius: 20px;
 }
-.form div label{
-    font-size: 20px;
-    margin-right: 10px;
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5%;
+    justify-content: center;
+    align-items: center;
+}
+.form label{
+    color: turquoise;
+    font-size: 18px;
+    font-weight: 600;
 }

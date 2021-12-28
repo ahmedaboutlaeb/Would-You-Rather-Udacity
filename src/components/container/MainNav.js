@@ -24,25 +24,23 @@ function MainNav() {
   }
   return (
     <div className={classes.container}>
-      <header className={classes.header}>
+    
         
-          <div className={classes.appName}>
-            <span>Would You Rather App</span>
-          </div>
+         
           <nav className={classes.nav}>
             <ul>
               <li>
-                <NavLink  to="/home"    >
+                <NavLink  to="/home" className={(e)=>e.isActive?`{classes.active}`:null} >
                   <span>Home</span>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/new-question" >
+                <NavLink to="/new-question"className={(e)=>e.isActive?`{classes.active}`:null} >
                   <span>New Question</span>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/leaderboard" >
+                <NavLink to="/leaderboard" className={(e)=>e.isActive?`{classes.active}`:null} >
                   <span>Leader Board</span>
                 </NavLink>
               </li>
@@ -50,7 +48,7 @@ function MainNav() {
           </nav>
           {users.authUser && <SignInUser authUser = {authUser} onLogOutHandler = {onLogOutHandler}/>}
         
-      </header>
+      
     </div>
   );
 }

@@ -1,36 +1,27 @@
 .container{
     display: flex;
+    flex-direction: row;
+    gap: 10px;
 
 }
 
-.avatar{
 
-
-}
 .authUserName{
-    font-size: larger;
-    color:green;
-    margin-right:10px;
+ 
     
 
 }
 .button{
-    display: flex;
-    align-items: center;
-    border: none;
-    outline: none;
-    justify-content: center;
-    background-color: #9b9a9e;
-    border-radius: 20px;
-    padding:  5px;
-    min-width: 100px;
-    margin-right: 1rem;
-    cursor: pointer;
-    color:white;
+    position: relative;
+    top:-7px;
+    background-color: white;
+    
 }
 .button:hover{
-    border: 1px solid green;
+    background-color: turquoise;
+  border-radius: 25%;
 }
+
 .imgContainer{
     width: 36px;
     height: 36px;
