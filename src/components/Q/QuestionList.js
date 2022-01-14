@@ -4,9 +4,10 @@ import classes from "./QuestionList.module.css";
 
 const QuestionsList = ({ questions, users }) => {
   
+  
   return (
     <div className={classes.container}>
-      {questions.map((question) => (
+      {questions.reverse().map((question) => (
         <Question
           question={question}
           author={users[question.author]}

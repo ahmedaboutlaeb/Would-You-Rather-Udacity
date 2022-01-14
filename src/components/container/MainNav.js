@@ -16,6 +16,12 @@ function MainNav() {
   const authUser = Object.values(users.users).find(
     (user) => user.id === users.authUser
   );
+  const handleClick = ()=>{
+    if(!users.authUser){
+      alert ("sign in first ")
+    }
+  
+  }
 
   const onLogOutHandler = () => {
     dispacth(setAuthUser(null));
@@ -29,6 +35,7 @@ function MainNav() {
           <li>
             <NavLink
               to="/home"
+              onClick={handleClick}
               className={({ isActive }) => (isActive ? `${classes.active}` : `${classes.inActive}`)}
             >
               <span>Home</span>
@@ -36,7 +43,8 @@ function MainNav() {
           </li>
           <li>
             <NavLink
-              to="/new-question"
+              to="/add"
+              onClick={handleClick}
               className={({ isActive }) => (isActive ? `${classes.active}` : `${classes.inActive}`)}
             >
               <span>New Question</span>
@@ -45,6 +53,7 @@ function MainNav() {
           <li>
             <NavLink
               to="/leaderboard"
+              onClick={handleClick}
               className={({ isActive }) => (isActive ? `${classes.active}` : `${classes.inActive}`)}
             >
               <span>Leader Board</span>

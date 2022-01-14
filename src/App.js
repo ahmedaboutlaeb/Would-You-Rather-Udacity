@@ -11,6 +11,7 @@ import SignInForm from "./components/container/SignInForm";
 import Home from "./views/Home";
 import NewQuestion from "./components/Q/NewQuestion";
 
+
 function App() {
   const authUser = useSelector((state) => state.users.authUser);
 
@@ -26,13 +27,15 @@ function App() {
     <div className="App">
       <MainNav />
       <Routes>
-        {!authUser && <Route path="*" element={<SignInForm />} />}
+   
+        {!authUser && <Route path="*" exact  element={<SignInForm />} />}
         {authUser && (
           <>
-            <Route path="/home" element={<Home />} />
-            <Route path="/home/:questionId" element={<QuestionInfo />} />
-            <Route path="/new-question" element={<NewQuestion />} />
-            <Route path="/leaderboard" element={<LeaderBoard />} />
+            <Route path="/home" exact element={<Home />} />
+            <Route path="/question/:questionId" exact element={<QuestionInfo />} />
+            <Route path="/add" exact element={<NewQuestion />} />
+            <Route path="/leaderboard" exact element={<LeaderBoard />} />
+            
           </>
         )}
       </Routes>

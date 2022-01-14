@@ -15,7 +15,7 @@ const Question = ({ question, author }) => {
           <h1>Would You Rather..</h1>
           <p>.. {question.optionOne.text}..</p>
          
-          <Link to={`/home/${question.id}`}>View Poll</Link>
+          <Link to={`/question/${question.id}`}>View Poll</Link>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ const AddQuestion = () => {
     e.preventDefault();
     const optionOne = optionOneInput.current.value;
     const optionTwo = optionTwoInput.current.value;
-    if(optionOne=='' || optionTwo==''){
+    if(optionOne==='' || optionTwo===''){
       alert('pleaser enter your option')
     }else{
     await dispatch(saveQuestion({ optionOne, optionTwo, author: authUser }));
@@ -28,6 +28,7 @@ const AddQuestion = () => {
       <p className={classes.title}>Create New Queston</p>
 
       <form onSubmit={onSubmitHandler}>
+        <h3>Would you rather</h3>
         
           <input type="text" ref={optionOneInput} />
       
