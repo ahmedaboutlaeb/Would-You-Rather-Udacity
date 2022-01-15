@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { setAuthUser } from "../../store/usersSlice";
@@ -8,11 +8,13 @@ import classes from "./SignInForm.module.css";
 //the actions here are onsubmit the form we will go to the /home page
 function SignInForm() {
   //All users
+  
   const users = useSelector((state) => state.users.users);
   
   // now we want to create an array of the users names
 
   const navigator = useNavigate();
+  const location = useLocation()
 
   const dispatch = useDispatch();
   const [selectedUser, setSelectedUser] = useState("select");
@@ -20,11 +22,11 @@ function SignInForm() {
   const onChangeHandler = (e) => {
     setSelectedUser(e.target.value);
   };
- 
+  
+  
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-
     //we set the authenticated user to the selected one from the options
     if (selectedUser === "select") {
       dispatch(setAuthUser(null));
@@ -32,7 +34,10 @@ function SignInForm() {
     } else {
       dispatch(setAuthUser(selectedUser));
       // and after slecetion the navigator will take us to the /home page
-      navigator("/home");
+      if (location.state?.from){
+        navigator(location.state.from)
+      }
+    
     }
   };
   return (

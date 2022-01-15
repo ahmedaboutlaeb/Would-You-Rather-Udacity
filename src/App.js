@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 import SignInForm from "./components/container/SignInForm";
 import Home from "./views/Home";
 import NewQuestion from "./components/Q/NewQuestion";
+import PageNotFound from "./components/container/PageNotFound";
 
 
 function App() {
@@ -27,15 +28,25 @@ function App() {
     <div className="App">
       <MainNav />
       <Routes>
-   
-        {!authUser && <Route path="*" exact  element={<SignInForm />} />}
+        {!authUser && (
+          <>
+            <Route path="/" element={<SignInForm />} />
+            
+            <Route path="/add" element={<SignInForm />} />
+            <Route path="/leaderboard" element={<SignInForm />} />
+            <Route path="/home" element={<SignInForm />} />
+            <Route path="*" element={<PageNotFound />} />
+            
+          </>
+        )}
+
         {authUser && (
           <>
-            <Route path="/home" exact element={<Home />} />
-            <Route path="/question/:questionId" exact element={<QuestionInfo />} />
-            <Route path="/add" exact element={<NewQuestion />} />
-            <Route path="/leaderboard" exact element={<LeaderBoard />} />
-            
+            <Route path="/home" element={<Home />} />
+            <Route path="/add/:questionId" element={<QuestionInfo />} />
+            <Route path="/add" element={<NewQuestion />} />
+            <Route path="/leaderboard" element={<LeaderBoard />} />
+            <Route path="*" element={<PageNotFound />} />
           </>
         )}
       </Routes>

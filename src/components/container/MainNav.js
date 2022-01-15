@@ -16,9 +16,11 @@ function MainNav() {
   const authUser = Object.values(users.users).find(
     (user) => user.id === users.authUser
   );
-  const handleClick = ()=>{
+  const handleClick = (e)=>{
     if(!users.authUser){
+      
       alert ("sign in first ")
+      
     }
   
   }

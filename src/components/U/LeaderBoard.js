@@ -12,7 +12,7 @@ const LeaderBoard = () => {
   //get all users
   const users = useSelector((state) => state.users.users);
   const usersArr = Object.values(users);
-  console.log(usersArr);
+  
   let usersInfo = [];
   usersArr.map((user) =>
     usersInfo.push({
@@ -26,7 +26,7 @@ const LeaderBoard = () => {
     })
   );
 
-  console.log(usersInfo);
+  
 
   //now we have this array that needs to be sorted according to the score
 
@@ -38,7 +38,7 @@ const LeaderBoard = () => {
     if (keyA < KeyB) return 1;
     return 0;
   });
-  console.log(usersInfo);
+  
 
   return (
     <div className={classes.leaderBoard}>
