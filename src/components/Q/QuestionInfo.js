@@ -1,11 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import QuestionNotFound from "../container/QuestionNotFound";
+
+
 
 import AnsweredQuestion from "./AnsweredQuestion";
 import UnAnsweredQuestion from "./UnAnsweredQuestion";
 //this component will render one question component (answeredquestion or usAnsweredQuestion)
-function QuestionInfo() {
+ function   QuestionInfo() {
   //get questions
   const questions = useSelector((state) => state.questions);
   //get the users
@@ -23,8 +26,10 @@ function QuestionInfo() {
   
   //it will return true or flase
   const isAnswered = Object.keys(authUser.answers).includes(questionId);
+  const isPath =   Object.keys(questions).includes(questionId);
 
   return (
+    isPath?
     <div >
       {!isAnswered && question && (
         <UnAnsweredQuestion question={question} authUser={authUser} author={users.users[question.author]}/>
@@ -32,7 +37,7 @@ function QuestionInfo() {
       {isAnswered && question && (
         <AnsweredQuestion question={question}  authUser={authUser} author={users.users[question.author]}/>
       )}
-    </div>
+    </div>:<QuestionNotFound/>
   );
 }
 

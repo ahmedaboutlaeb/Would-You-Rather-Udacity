@@ -12,9 +12,11 @@ import Home from "./views/Home";
 import NewQuestion from "./components/Q/NewQuestion";
 import PageNotFound from "./components/container/PageNotFound";
 
-
 function App() {
   const authUser = useSelector((state) => state.users.authUser);
+  
+  
+
 
   const dispatch = useDispatch();
   //onloading the page we will set the qustions to the qusetions object on the _DATA.js file
@@ -23,6 +25,7 @@ function App() {
     _getQuestions().then((data) => dispatch(setQuestions(data)));
     _getUsers().then((data) => dispatch(setUsers(data)));
   }, [dispatch]);
+  
 
   return (
     <div className="App">
@@ -31,22 +34,23 @@ function App() {
         {!authUser && (
           <>
             <Route path="/" element={<SignInForm />} />
-            
+            <Route path="/questions/:questionId" element={<SignInForm />} />
             <Route path="/add" element={<SignInForm />} />
             <Route path="/leaderboard" element={<SignInForm />} />
             <Route path="/home" element={<SignInForm />} />
             <Route path="*" element={<PageNotFound />} />
-            
           </>
         )}
 
         {authUser && (
           <>
             <Route path="/home" element={<Home />} />
-            <Route path="/add/:questionId" element={<QuestionInfo />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/questions/:questionId" element = {<QuestionInfo/>}/>
             <Route path="/add" element={<NewQuestion />} />
             <Route path="/leaderboard" element={<LeaderBoard />} />
             <Route path="*" element={<PageNotFound />} />
+            
           </>
         )}
       </Routes>
